@@ -1,0 +1,386 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;\red25\green25\blue25;\red194\green56\blue170;
+\red93\green216\blue255;\red0\green161\blue192;\red163\green103\blue230;\red208\green142\blue255;\red182\green100\blue93;
+\red103\green183\blue164;\red194\green112\blue255;\red108\green121\blue134;\red146\green161\blue177;\red185\green191\blue128;
+}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c100000\c100000\c85000;\csgenericrgb\c9804\c9804\c9804;\csgenericrgb\c75999\c22149\c66780;
+\csgenericrgb\c36295\c84643\c99897;\csgenericrgb\c0\c63137\c75294;\csgenericrgb\c64054\c40219\c90115;\csgenericrgb\c81569\c55691\c99927;\csgenericrgb\c71434\c39129\c36568;
+\csgenericrgb\c40538\c71705\c64209;\csgenericrgb\c76136\c44055\c100000;\csgenericrgb\c42394\c47462\c52518;\csgenericrgb\c57255\c63137\c69412;\csgenericrgb\c72547\c74939\c50000;
+}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab840
+\pard\tx840\pardeftab840\pardirnatural\partightenfactor0
+
+\f0\fs34 \cf2 \cb3 \
+\pard\tx840\pardeftab840\pardirnatural\partightenfactor0
+
+\f1\b\fs36 \cf4 \cb3 import
+\f0\b0\fs34 \cf2 \cb3  Foundation\
+\
+
+\f1\b\fs36 \cf4 \cb3 protocol
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 Device
+\fs34 \cf2 \cb3  \{\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 func
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 aboutDevice
+\fs34 \cf2 \cb3 () -> 
+\fs36 \cf7 \cb3 String
+\fs34 \cf2 \cb3 \
+\}\
+\
+\
+
+\f1\b\fs36 \cf4 \cb3 struct
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 OperatingSystem
+\fs34 \cf2 \cb3  \{\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 enum
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 systemType
+\fs34 \cf2 \cb3 :
+\fs36 \cf8 \cb3 String
+\fs34 \cf2 \cb3  \{\
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 IOS
+\fs34 \cf2 \cb3 \
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 macOS
+\fs34 \cf2 \cb3 \
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 iPadOS
+\fs34 \cf2 \cb3 \
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 watchOS
+\fs34 \cf2 \cb3 \
+        \
+    \}\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 versions
+\fs34 \cf2 \cb3 : 
+\fs36 \cf8 \cb3 Int
+\fs34 \cf2 \cb3 \
+    
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 type
+\fs34 \cf2 \cb3 : systemType\
+\}\
+\
+\
+
+\f1\b\fs36 \cf4 \cb3 struct
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 Mac
+\fs34 \cf2 \cb3 :Device \{\
+    
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 : OperatingSystem\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 init
+\f0\b0\fs34 \cf2 \cb3 (
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 :OperatingSystem) \{\
+        
+\f1\b\fs36 \cf4 \cb3 self
+\f0\b0\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 system
+\fs34 \cf2 \cb3  = system\
+    \}\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 func
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 aboutDevice
+\fs34 \cf2 \cb3 () -> 
+\fs36 \cf7 \cb3 String
+\fs34 \cf2 \cb3  \{\
+        
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf9 \cb3 "Mac: 
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .
+\fs36 \cf11 \cb3 type
+\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 rawValue
+\fs34 \cf2 \cb3 )
+\fs36 \cf9 \cb3  
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .versions)
+\fs36 \cf9 \cb3 "
+\fs34 \cf2 \cb3 \
+    \}\
+\}\
+\
+
+\f1\b\fs36 \cf4 \cb3 struct
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 watchOS
+\fs34 \cf2 \cb3 :Device \{\
+    
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 : OperatingSystem\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 init
+\f0\b0\fs34 \cf2 \cb3 (
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 :OperatingSystem) \{\
+        
+\f1\b\fs36 \cf4 \cb3 self
+\f0\b0\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 system
+\fs34 \cf2 \cb3  = system\
+    \}\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 func
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 aboutDevice
+\fs34 \cf2 \cb3 () -> 
+\fs36 \cf7 \cb3 String
+\fs34 \cf2 \cb3  \{\
+        
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf9 \cb3 "Watch : 
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .
+\fs36 \cf11 \cb3 type
+\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 rawValue
+\fs34 \cf2 \cb3 )
+\fs36 \cf9 \cb3  
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .versions)
+\fs36 \cf9 \cb3 "
+\fs34 \cf2 \cb3 \
+    \}\
+\}\
+\
+\
+
+\f1\b\fs36 \cf4 \cb3 struct
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 iPhone
+\fs34 \cf2 \cb3 :Device \{\
+    
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 : OperatingSystem\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 init
+\f0\b0\fs34 \cf2 \cb3 (
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 :OperatingSystem) \{\
+        
+\f1\b\fs36 \cf4 \cb3 self
+\f0\b0\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 system
+\fs34 \cf2 \cb3  = system\
+    \}\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 func
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 aboutDevice
+\fs34 \cf2 \cb3 () -> 
+\fs36 \cf7 \cb3 String
+\fs34 \cf2 \cb3  \{\
+        
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf9 \cb3 "iPhone: 
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .
+\fs36 \cf11 \cb3 type
+\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 rawValue
+\fs34 \cf2 \cb3 )
+\fs36 \cf9 \cb3  
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .versions)
+\fs36 \cf9 \cb3 "
+\fs34 \cf2 \cb3 \
+    \}\
+\}\
+\
+
+\f1\b\fs36 \cf4 \cb3 struct
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 iPad
+\fs34 \cf2 \cb3 :Device \{\
+    
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 : OperatingSystem\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 init
+\f0\b0\fs34 \cf2 \cb3 (
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 :OperatingSystem) \{\
+        
+\f1\b\fs36 \cf4 \cb3 self
+\f0\b0\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 system
+\fs34 \cf2 \cb3  = system\
+    \}\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 func
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 aboutDevice
+\fs34 \cf2 \cb3 () -> 
+\fs36 \cf7 \cb3 String
+\fs34 \cf2 \cb3  \{\
+        
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf9 \cb3 "iPad: 
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .
+\fs36 \cf11 \cb3 type
+\fs34 \cf2 \cb3 .
+\fs36 \cf7 \cb3 rawValue
+\fs34 \cf2 \cb3 )
+\fs36 \cf9 \cb3  
+\fs34 \cf2 \cb3 \\(
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .versions)
+\fs36 \cf9 \cb3 "
+\fs34 \cf2 \cb3 \
+    \}\
+\}\
+\
+\
+
+\fs36 \cf12 \cb3 //
+\f1\b \cf13 MARK: - Factory
+\f0\b0\fs34 \cf2 \cb3 \
+
+\f1\b\fs36 \cf4 \cb3 struct
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf5 \cb3 ComputerFactory
+\fs34 \cf2 \cb3  \{\
+    \
+    
+\f1\b\fs36 \cf4 \cb3 static
+\f0\b0\fs34 \cf2 \cb3  
+\f1\b\fs36 \cf4 \cb3 func
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 makeComputer
+\fs34 \cf2 \cb3 (
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 :OperatingSystem) -> Device \{\
+        \
+        
+\f1\b\fs36 \cf4 \cb3 switch
+\f0\b0\fs34 \cf2 \cb3  system.
+\fs36 \cf11 \cb3 type
+\fs34 \cf2 \cb3  \{\
+            \
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  .IOS:\
+            
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  iPhone(system: system)\
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  .iPadOS:\
+            
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  iPad(system: system)\
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  .macOS:\
+            
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  Mac(system: system)\
+        
+\f1\b\fs36 \cf4 \cb3 case
+\f0\b0\fs34 \cf2 \cb3  .watchOS:\
+            
+\f1\b\fs36 \cf4 \cb3 return
+\f0\b0\fs34 \cf2 \cb3  watchOS(system: system)\
+            \
+        \}\
+    \}\
+    \
+\}\
+\
+
+\f1\b\fs36 \cf4 \cb3 let
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 computer
+\fs34 \cf2 \cb3  = ComputerFactory.makeComputer(system: OperatingSystem(versions: 
+\fs36 \cf14 \cb3 16
+\fs34 \cf2 \cb3 , type: .macOS))\
+\
+
+\fs36 \cf12 \cb3 //print(computer.aboutDevice())
+\fs34 \cf2 \cb3 \
+\
+
+\f1\b\fs36 \cf4 \cb3 var
+\f0\b0\fs34 \cf2 \cb3  
+\fs36 \cf6 \cb3 system
+\fs34 \cf2 \cb3 : [OperatingSystem] = [\
+    OperatingSystem(versions: 
+\fs36 \cf14 \cb3 13
+\fs34 \cf2 \cb3 , type: .IOS),\
+    OperatingSystem(versions: 
+\fs36 \cf14 \cb3 14
+\fs34 \cf2 \cb3 , type: .macOS),\
+    OperatingSystem(versions: 
+\fs36 \cf14 \cb3 15
+\fs34 \cf2 \cb3 , type: .iPadOS),\
+]\
+\
+\
+
+\fs36 \cf10 \cb3 system
+\fs34 \cf2 \cb3 .
+\fs36 \cf11 \cb3 forEach
+\fs34 \cf2 \cb3  \{ system 
+\f1\b\fs36 \cf4 \cb3 in
+\f0\b0\fs34 \cf2 \cb3 \
+    
+\fs36 \cf11 \cb3 print
+\fs34 \cf2 \cb3 (ComputerFactory.makeComputer(system: system).aboutDevice())\
+\}\
+}
